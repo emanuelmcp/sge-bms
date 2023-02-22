@@ -1,5 +1,4 @@
 import { Company } from 'src/company/entities/company.entity';
-import { Role } from 'src/roles/entities/role.entity';
 import {
   Column,
   CreateDateColumn,
@@ -11,27 +10,32 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class User {
+export class Incidence {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  username: string;
-
-  @OneToOne(() => Role)
-  @JoinColumn()
-  idRol: Role;
+  date: Date;
 
   @OneToOne(() => Company)
   @JoinColumn()
-  idCompany: Company;
+  company: Company;
 
   @Column()
-  email: string;
+  description: string;
+
+  @Column()
+  closed: boolean;
+
+  @Column()
+  duration: number;
 
   @CreateDateColumn()
   createdAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+
+  
 }
