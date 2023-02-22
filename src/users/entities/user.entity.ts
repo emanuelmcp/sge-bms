@@ -1,6 +1,7 @@
 import { Company } from 'src/company/entities/company.entity';
 import { Role } from 'src/roles/entities/role.entity';
 import {
+  BeforeInsert,
   Column,
   CreateDateColumn,
   Entity,
@@ -18,6 +19,9 @@ export class User {
   @Column()
   username: string;
 
+  @Column()
+  password: string;
+
   @OneToOne(() => Role)
   @JoinColumn()
   idRol: Role;
@@ -34,4 +38,9 @@ export class User {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @BeforeInsert()
+  hashPassword() {
+    this.password = 
+  }
 }
