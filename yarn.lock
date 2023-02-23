@@ -935,6 +935,13 @@
   resolved "https://registry.npmjs.org/@types/estree/-/estree-0.0.51.tgz"
   integrity sha512-CuPgU6f3eT/XgKKPqKd/gLZV1Xmvf1a2R5POBOGQa6uv82xpls89HU5zKeVoyR8XzHd1RGNOlQlvUe3CFkjWNQ==
 
+"@types/express-handlebars@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@types/express-handlebars/-/express-handlebars-6.0.0.tgz#ca736fff5544d80f81f0869d56bb7ad333e000e0"
+  integrity sha512-L0G9j7xc9k6FavI9CCUueJf7YHGE5b+gXV4NGGcObTbLqvZ2TwebEsrFb1b8NEc2kDf22Mu+jCDPjvWzfCS0Gw==
+  dependencies:
+    express-handlebars "*"
+
 "@types/express-serve-static-core@^4.17.33":
   version "4.17.33"
   resolved "https://registry.npmjs.org/@types/express-serve-static-core/-/express-serve-static-core-4.17.33.tgz"
@@ -2381,6 +2388,15 @@ expect@^29.0.0, expect@^29.4.3:
     jest-message-util "^29.4.3"
     jest-util "^29.4.3"
 
+express-handlebars@*:
+  version "6.0.7"
+  resolved "https://registry.yarnpkg.com/express-handlebars/-/express-handlebars-6.0.7.tgz#f779254664eff0e250362ef1c2b30587059c212a"
+  integrity sha512-iYeMFpc/hMD+E6FNAZA5fgWeXnXr4rslOSPkeEV6TwdmpJ5lEXuWX0u9vFYs31P2MURctQq2batR09oeNj0LIg==
+  dependencies:
+    glob "^8.1.0"
+    graceful-fs "^4.2.10"
+    handlebars "^4.7.7"
+
 express@4.18.2:
   version "4.18.2"
   resolved "https://registry.npmjs.org/express/-/express-4.18.2.tgz"
@@ -2761,7 +2777,7 @@ globby@^11.1.0:
     merge2 "^1.4.1"
     slash "^3.0.0"
 
-graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.4, graceful-fs@^4.2.9:
+graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.10, graceful-fs@^4.2.4, graceful-fs@^4.2.9:
   version "4.2.10"
   resolved "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.10.tgz"
   integrity sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==
@@ -2771,7 +2787,7 @@ grapheme-splitter@^1.0.4:
   resolved "https://registry.npmjs.org/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz"
   integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
 
-handlebars@4.7.7:
+handlebars@4.7.7, handlebars@^4.7.7:
   version "4.7.7"
   resolved "https://registry.npmjs.org/handlebars/-/handlebars-4.7.7.tgz"
   integrity sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==
@@ -2812,7 +2828,7 @@ has@^1.0.3:
 
 hbs@^4.2.0:
   version "4.2.0"
-  resolved "https://registry.npmjs.org/hbs/-/hbs-4.2.0.tgz"
+  resolved "https://registry.yarnpkg.com/hbs/-/hbs-4.2.0.tgz#10e40dcc24d5be7342df9636316896617542a32b"
   integrity sha512-dQwHnrfWlTk5PvG9+a45GYpg0VpX47ryKF8dULVd6DtwOE6TEcYQXQ5QM6nyOx/h7v3bvEQbdn19EDAcfUAgZg==
   dependencies:
     handlebars "4.7.7"

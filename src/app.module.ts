@@ -4,6 +4,7 @@ import { UsersModule } from './users/users.module';
 import { RolesModule } from './roles/roles.module';
 import { CompanyModule } from './company/company.module';
 import { IncidencesModule } from './incidences/incidences.module';
+import { IndexModule } from './index/index.module';
 
 @Module({
   imports: [
@@ -13,13 +14,15 @@ import { IncidencesModule } from './incidences/incidences.module';
       host: 'localhost',
       database: 'sge',
       username: 'root',
-      port: 3306,
+      password: 'root',
+      port: 40000,
       autoLoadEntities: true,
       synchronize: true,
     }),
     RolesModule,
     CompanyModule,
     IncidencesModule,
+    IndexModule,
   ],
   controllers: [],
   providers: [],

@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  Render,
+} from '@nestjs/common';
 import { IncidencesService } from './incidences.service';
 import { CreateIncidenceDto } from './dto/create-incidence.dto';
 import { UpdateIncidenceDto } from './dto/update-incidence.dto';
@@ -13,8 +22,10 @@ export class IncidencesController {
   }
 
   @Get()
-  findAll() {
-    return this.incidencesService.findAll();
+  @Render('incidences')
+  async findAll() {
+    const incidences = await this.incidencesService.findAll();
+    return { incidences };
   }
 
   @Get(':id')
@@ -23,7 +34,10 @@ export class IncidencesController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateIncidenceDto: UpdateIncidenceDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateIncidenceDto: UpdateIncidenceDto,
+  ) {
     return this.incidencesService.update(+id, updateIncidenceDto);
   }
 

@@ -4,7 +4,7 @@ import {
   CreateDateColumn,
   Entity,
   JoinColumn,
-  OneToOne,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -17,7 +17,7 @@ export class Incidence {
   @Column()
   date: Date;
 
-  @OneToOne(() => Company)
+  @ManyToOne(() => Company)
   @JoinColumn()
   company: Company;
 
@@ -35,7 +35,4 @@ export class Incidence {
 
   @UpdateDateColumn()
   updatedAt: Date;
-
-
-  
 }
