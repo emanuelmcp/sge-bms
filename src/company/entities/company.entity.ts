@@ -1,7 +1,9 @@
+import { Incidence } from 'src/incidences/entities/incidence.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -40,4 +42,7 @@ export class Company {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @OneToMany(() => Incidence, (incidence) => incidence.company)
+  incidences: Incidence[];
 }

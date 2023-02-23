@@ -12,7 +12,7 @@ export class IncidencesService {
     private readonly incidenceRepository: Repository<Incidence>,
   ) {}
   create(createIncidenceDto: CreateIncidenceDto) {
-    return 'This action adds a new incidence';
+    return this.incidenceRepository.save(createIncidenceDto);
   }
 
   async findAll() {

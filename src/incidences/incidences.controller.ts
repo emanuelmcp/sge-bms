@@ -23,10 +23,15 @@ export class IncidencesController {
 
   @Get()
   @Render('incidences')
-  async findAll() {
+  async viewAllIncidences() {
     const incidences = await this.incidencesService.findAll();
     return { incidences };
   }
+
+  @Get('create')
+  @Render('createincidence')
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  async showIncidenceCreationForm() {}
 
   @Get(':id')
   findOne(@Param('id') id: string) {
