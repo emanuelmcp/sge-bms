@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { CreateIncidenceDto } from './dto/create-incidence.dto';
-import { UpdateIncidenceDto } from './dto/update-incidence.dto';
+import { CreateIncidenceDto } from '../shared/dto/create-incidence.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Incidence } from './entities/incidence.entity';
+import { Incidence } from '../shared/entities/incidence.entity';
 import { Repository } from 'typeorm';
+import { UpdateIncidenceDto } from 'src/shared/dto/update-incidence.dto';
 
 @Injectable()
 export class IncidencesService {
@@ -16,8 +16,7 @@ export class IncidencesService {
   }
 
   async findAll() {
-    const incidences = await this.incidenceRepository.find();
-    return incidences;
+    return await this.incidenceRepository.find();
   }
 
   findOne(id: number) {

@@ -1,4 +1,4 @@
-import { Incidence } from 'src/incidences/entities/incidence.entity';
+import { Incidence } from 'src/shared/entities/incidence.entity';
 import {
   Column,
   CreateDateColumn,

@@ -1,5 +1,6 @@
-import { Company } from 'src/company/entities/company.entity';
+import { Company } from 'src/shared/entities/company.entity';
 import {
+  BeforeInsert,
   Column,
   CreateDateColumn,
   Entity,
@@ -35,4 +36,9 @@ export class Incidence {
 
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @BeforeInsert()
+  setIncidenceStatus() {
+    this.date = new Date();
+  }
 }

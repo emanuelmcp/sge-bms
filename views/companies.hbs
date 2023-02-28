@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Empresas</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    {{> favicon }}
+
+    <!-- Google Web Fonts -->
+    {{> webfonts }}
+    
+    <!-- Icon Font Stylesheet -->
+    {{> iconfont }}
+    <!-- Libraries Stylesheet -->
+    {{> libraries }}
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    {{> stylesheet }}
+</head>
+
+<body>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        {{> spinner }}
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        {{> sidebar }}
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            {{> navbar }}
+            <!-- Navbar End -->
+
+            <!-- Recent Sales Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Empresas</h6>
+                        <a href="">Show All</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                            <thead>
+                                <tr class="text-white">
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">CP</th>
+                                    <th scope="col">Ciudad</th>
+                                    <th scope="col">Provincia</th>
+                                    <th scope="col">CIF</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Telefono</th>
+                                    <th scope="col">Contacto</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each companies}}
+                                <tr>
+                                    <td>{{this.companyName}}</td>
+                                    <td>{{this.postalCode}}</td>
+                                    <td>{{this.city}}</td>
+                                    <td>{{this.region}}</td>
+                                    <td>{{this.cif}}</td>
+                                    <td>{{this.email}}</td>
+                                    <td>{{this.numberPhone}}</td>
+                                    <td>{{this.contactName}}</td>
+                                    <td><a class="btn btn-sm btn-primary" href="companies/update/{{this.id}}">Editar empresa</a></td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Recent Sales End -->
+
+            <!-- Footer Start -->
+            {{> footer }}
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    {{> scripts }}
+    <!-- Template Javascript -->
+    {{> template }}
+</body>
+
+</html>

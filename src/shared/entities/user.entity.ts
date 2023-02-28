@@ -1,5 +1,5 @@
-import { Company } from 'src/company/entities/company.entity';
-import { Role } from 'src/roles/entities/role.entity';
+import { Company } from 'src/shared/entities/company.entity';
+import { Role } from 'src/shared/entities/role.entity';
 import {
   BeforeInsert,
   Column,

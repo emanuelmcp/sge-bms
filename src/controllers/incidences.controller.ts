@@ -8,18 +8,18 @@ import {
   Delete,
   Render,
 } from '@nestjs/common';
-import { IncidencesService } from './incidences.service';
-import { CreateIncidenceDto } from './dto/create-incidence.dto';
-import { UpdateIncidenceDto } from './dto/update-incidence.dto';
+import { IncidencesService } from 'src/incidences/incidences.service';
+import { CreateIncidenceDto } from 'src/shared/dto/create-incidence.dto';
+import { UpdateIncidenceDto } from 'src/shared/dto/update-incidence.dto';
 
 @Controller('incidences')
 export class IncidencesController {
   constructor(private readonly incidencesService: IncidencesService) {}
 
-  @Post()
-  create(@Body() createIncidenceDto: CreateIncidenceDto) {
-    return this.incidencesService.create(createIncidenceDto);
-  }
+  @Get('create')
+  @Render('createincidence')
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  async showIncidenceCreationForm() {}
 
   @Get()
   @Render('incidences')
@@ -28,17 +28,17 @@ export class IncidencesController {
     return { incidences };
   }
 
-  @Get('create')
-  @Render('createincidence')
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  async showIncidenceCreationForm() {}
+  @Post('create-incidence')
+  create(@Body() createIncidenceDto: CreateIncidenceDto) {
+    return this.incidencesService.create(createIncidenceDto);
+  }
 
-  @Get(':id')
+  @Get('incidences/:id')
   findOne(@Param('id') id: string) {
     return this.incidencesService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Patch('incidences/:id')
   update(
     @Param('id') id: string,
     @Body() updateIncidenceDto: UpdateIncidenceDto,
@@ -46,7 +46,7 @@ export class IncidencesController {
     return this.incidencesService.update(+id, updateIncidenceDto);
   }
 
-  @Delete(':id')
+  @Delete('incidences/:id')
   remove(@Param('id') id: string) {
     return this.incidencesService.remove(+id);
   }

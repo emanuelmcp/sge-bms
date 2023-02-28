@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>DarkPan - Bootstrap 5 Admin Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    {{> favicon }}
+
+    <!-- Google Web Fonts -->
+    {{> webfonts }}
+    
+    <!-- Icon Font Stylesheet -->
+    {{> iconfont }}
+    <!-- Libraries Stylesheet -->
+    {{> libraries }}
+    <!-- Customized Bootstrap Stylesheet -->
+    {{> bootstrap }}
+    <!-- Template Stylesheet -->
+    {{> stylesheet }}
+</head>
+
+<body>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        {{> spinner }}
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        {{> sidebar }}
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            {{> navbar }}
+            <!-- Navbar End -->
+
+
+            <!-- Blank Start -->
+<div class="col-sm-12 col-xl-12 pt-4 px-4">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Editar empresa</h6>
+                            <form method="post" action="/companies">
+                                <div class="row mb-3">
+                                    <label for="inputText3" class="col-sm-2 col-form-label">Nombre</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputEmail3" name="companyName" value="{{company.companyName}}">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputText3" class="col-sm-2 col-form-label">Codigo postal</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputPassword3" name="postalCode" value="{{company.postalCode}}">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputText3" class="col-sm-2 col-form-label">Ciudad</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputPassword3" name="city" value="{{company.city}}">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputText3" class="col-sm-2 col-form-label">Provincia</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputPassword3" name="region" value="{{company.region}}">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputText3" class="col-sm-2 col-form-label">CIF</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputPassword3" name="cif" value="{{company.cif}}">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="inputPassword3" name="email" value="{{company.email}}">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Numero de telefono</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputPassword3" name="numberPhone" value="{{company.numberPhone}}">
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <label for="inputEmail3" class="col-sm-2 col-form-label">Persona de contacto</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputPassword3" name="contactName" value="{{company.contactName}}">
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </form>
+                        </div>
+                    </div>
+            <!-- Blank End -->
+
+            <!-- Footer Start -->
+            {{> footer }}
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    {{> scripts }}
+    <!-- Template Javascript -->
+    {{> template }}
+</body>
+
+</html>
