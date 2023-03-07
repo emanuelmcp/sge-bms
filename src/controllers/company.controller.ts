@@ -19,7 +19,7 @@ export class CompanyController {
   constructor(private readonly companyService: CompanyService) {}
 
   @Get('create')
-  @Render('createcompany')
+  @Render('create-company')
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   async showCompanyCreationForm() {}
 
@@ -43,12 +43,7 @@ export class CompanyController {
     return this.companyService.create(createCompanyDto);
   }
 
-  /*@Get(':id')
-  findOne(@Param('id', ParseIntPipe) id: number) {
-    return this.companyService.findOne(id);
-  }*/
-
-  @Patch(':id')
+  @Post(':id')
   update(@Param('id') id: number, @Body() updateCompanyDto: UpdateCompanyDto) {
     return this.companyService.update(id, updateCompanyDto);
   }
