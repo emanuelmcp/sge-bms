@@ -24,7 +24,7 @@ export class CompanyController {
   async showCompanyCreationForm() {}
 
   @Get('update/:id')
-  @Render('updatecompany')
+  @Render('update-company')
   async showCompanyUpdatingForm(@Param('id', ParseIntPipe) id: number) {
     const company = await this.companyService.findOne(id);
     return { company };

@@ -15,24 +15,21 @@ export class Incidence {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @CreateDateColumn()
   date: Date;
 
-  @ManyToOne(() => Company)
+  @ManyToOne(() => Company, { eager: true })
   @JoinColumn()
   company: Company;
 
   @Column()
   description: string;
 
-  @Column()
+  @Column({ default: false })
   closed: boolean;
 
-  @Column()
+  @Column({ default: 0 })
   duration: number;
-
-  @CreateDateColumn()
-  createdAt: Date;
 
   @UpdateDateColumn()
   updatedAt: Date;

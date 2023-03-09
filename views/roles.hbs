@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Roles</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    {{> favicon }}
+
+    <!-- Google Web Fonts -->
+    {{> webfonts }}
+    
+    <!-- Icon Font Stylesheet -->
+    {{> iconfont }}
+    <!-- Libraries Stylesheet -->
+    {{> libraries }}
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    {{> stylesheet }}
+</head>
+
+<body>
+    <div class="container-fluid position-relative d-flex p-0">
+        <!-- Spinner Start -->
+        {{> spinner }}
+        <!-- Spinner End -->
+
+
+        <!-- Sidebar Start -->
+        {{> sidebar }}
+        <!-- Sidebar End -->
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+            {{> navbar }}
+            <!-- Navbar End -->
+
+            <!-- Recent Sales Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary text-center rounded p-4">
+                    <div class="d-flex align-items-center justify-content-between mb-4">
+                        <h6 class="mb-0">Roles</h6>
+                        <a href="">Show All</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table text-start align-middle table-bordered table-hover mb-0">
+                            <thead>
+                                <tr class="text-white">
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Creado</th>
+                                    <th scope="col">Actualizado</th>
+                                    <th scope="col">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each roles}}
+                                <tr>
+                                    <td>{{this.role}}</td>
+                                    <td>{{this.createdAt}}</td>
+                                    <td>{{this.updatedAt}}</td>
+                                    <td class="d-flex justify-content-center">
+                                        <a class="fa fa-trash p-1" href="role/delete/{{this.id}}"></a>
+                                        <a class="fa fa-eye p-1" href="role/update/{{this.id}}"></a>
+                                        <a class="fa fa-download p-1" href="role/update/{{this.id}}"></a>
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Recent Sales End -->
+
+            <!-- Footer Start -->
+            {{> footer }}
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    {{> scripts }}
+    <!-- Template Javascript -->
+    {{> template }}
+</body>
+
+</html>

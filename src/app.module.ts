@@ -3,6 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CompanyModule } from './company/company.module';
 import { IncidencesModule } from './incidences/incidences.module';
 import { IndexModule } from './index/index.module';
+import { RoleModule } from './role/role.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -11,14 +13,16 @@ import { IndexModule } from './index/index.module';
       host: 'localhost',
       database: 'sge',
       username: 'root',
-      password: 'root',
-      port: 40000,
+      //password: 'root',
+      port: 3306,
       autoLoadEntities: true,
       synchronize: true,
     }),
     CompanyModule,
     IncidencesModule,
     IndexModule,
+    RoleModule,
+    UsersModule,
   ],
   controllers: [],
   providers: [],

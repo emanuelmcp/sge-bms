@@ -17,7 +17,7 @@ export class IncidencesController {
   constructor(private readonly incidencesService: IncidencesService) {}
 
   @Get('create')
-  @Render('createincidence')
+  @Render('create-incidence')
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   async showIncidenceCreationForm() {}
 

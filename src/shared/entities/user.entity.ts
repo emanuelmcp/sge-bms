@@ -6,6 +6,7 @@ import {
   CreateDateColumn,
   Entity,
   JoinColumn,
+  OneToMany,
   OneToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
@@ -23,8 +24,7 @@ export class User {
   @Column()
   password: string;
 
-  @OneToOne(() => Role)
-  @JoinColumn()
+  @OneToMany(() => Role, (rol) => rol.users)
   idRol: Role;
 
   @OneToOne(() => Company)
